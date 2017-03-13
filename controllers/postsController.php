@@ -9,10 +9,10 @@
     class postsController extends controller {
 
         public function index(){
-            echo "Listar postagens";
+            echo "Esse é um teste";
         }
 
-        public function ver($nome, $sobrenome) {
-        echo "Meu nome é: ".$nome." ".$sobrenome;
+        public function ver($url) {
+        echo "Nome da noticia que veremos: ".$url;
         }
     }

@@ -9,17 +9,28 @@
 
     class homeController extends controller {
 
+        public function __construct() {
+            parent::__construct();
+        }
+
         public function index() {
 
-           // echo "TESTE ESTÁ FUNCIONANDO...";
-
+            /*
             $usuario = new usuario();
-            $usuario->setName('Antonio Junior');
-            //echo "Meu nome é : ".$usuario->getName();
-
+            $usuario->setName('Antonio');
             $dados = array(
                 'name' => $usuario->getName()
             );
-            $this->loadView('home', $dados);
+            */
+            $fotos = new fotos(); // Istancia a funçao fotos no model
+            $dados['fotos'] = $fotos->getFotos();
+
+            $this->loadTemplate('home', $dados);
+        }
+        public function sobre() {
+            $dados = array();
+            $this->loadTemplate('sobre', $dados);
         }
     }
+
+?>
